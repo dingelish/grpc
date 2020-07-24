@@ -127,8 +127,9 @@ grpc_status_code TlsFetchKeyMaterials(
   return reload_status;
 }
 
-grpc_error* TlsCheckHostName(const char* peer_name, const tsi_peer* peer) {
+grpc_error* TlsCheckHostName(const char* _peer_name, const tsi_peer* _peer) {
   /* Check the peer name if specified. */
+  /*
   if (peer_name != nullptr && !grpc_ssl_host_matches_name(peer, peer_name)) {
     char* msg;
     gpr_asprintf(&msg, "Peer name %s is not in peer certificate", peer_name);
@@ -136,6 +137,7 @@ grpc_error* TlsCheckHostName(const char* peer_name, const tsi_peer* peer) {
     gpr_free(msg);
     return error;
   }
+  */
   return GRPC_ERROR_NONE;
 }
 
